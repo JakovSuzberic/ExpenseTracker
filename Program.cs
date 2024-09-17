@@ -9,11 +9,20 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(o =>
+    {
+
+        o.ConfigObject.AdditionalItems.Add("requestSnippetEnabled", true);
+        o.EnableTryItOutByDefault();
+
+    });
 }
 
 app.UseHttpsRedirection();
