@@ -4,8 +4,8 @@ namespace ExpenseTracker.Models
 {
     public class PaymentMethods: Users
     {
-        [Key]
-        public int? PaymentMethodId { get; set; }
+        
+        public int? Payment_Method_Id { get; set; }
         public string? Name { get; set; }
 
 

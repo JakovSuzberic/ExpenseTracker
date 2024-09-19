@@ -1,14 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExpenseTracker.Models
 {
+    [NotMapped]
     public class Budgets: Users
     {
-        [Key]
-        public int? BudgetId { get; set; }
+        
+        public int? Budget_Id { get; set; }
         public float? Amount { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public DateTime? Start_Date { get; set; }
+        public DateTime? End_Date { get; set; }
 
 
     }
