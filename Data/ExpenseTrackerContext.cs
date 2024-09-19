@@ -15,9 +15,9 @@ namespace ExpenseTracker.Data
 
         public DbSet<Users> Users { get; set; }
         public DbSet<Budgets> Budgets { get; set; }
-        public DbSet<Categorys> Categorys { get; set; }
-        public DbSet<Expenses> Expenses { get; set; }
-        public DbSet<PaymentMethods> PaymentMethods { get; set; }
+       // public DbSet<Categorys> Categorys { get; set; }
+        //public DbSet<Expenses> Expenses { get; set; }
+        //public DbSet<PaymentMethods> PaymentMethods { get; set; }
 
 
     }
