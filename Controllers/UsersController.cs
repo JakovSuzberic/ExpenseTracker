@@ -28,6 +28,15 @@ namespace ExpenseTracker.Controllers
 
         }
 
+        [HttpGet]
+        [Route("{User_id:int}")]
+        public IActionResult GetByUserId(int User_id)
+        {
+
+            return Ok(_context.Users.Find(User_id));
+
+        }
+
 
         [HttpPost]
         public IActionResult Post(Users User) 
@@ -38,6 +47,7 @@ namespace ExpenseTracker.Controllers
             return StatusCode(StatusCodes.Status201Created, User);
             
         }
+
 
 
         [HttpPut]
