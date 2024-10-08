@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExpenseTracker.Models
 {
-    [NotMapped]
+    
     public class Budgets: Users
     {
         

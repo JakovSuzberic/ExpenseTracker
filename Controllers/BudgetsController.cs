@@ -1,10 +1,12 @@
 ﻿using ExpenseTracker.Data;
 using Microsoft.AspNetCore.Mvc;
+using ExpenseTracker.Models;
 
 namespace ExpenseTracker.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
+
     public class BudgetsController: ControllerBase
     {
 
