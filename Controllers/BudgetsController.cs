@@ -1,33 +1,33 @@
-﻿using ExpenseTracker.Data;
-using Microsoft.AspNetCore.Mvc;
-using ExpenseTracker.Models;
+﻿//using ExpenseTracker.Data;
+//using Microsoft.AspNetCore.Mvc;
+//using ExpenseTracker.Models;
 
-namespace ExpenseTracker.Controllers
-{
-    [ApiController]
-    [Route("api/v1/[controller]")]
+//namespace ExpenseTracker.Controllers
+//{
+//    [ApiController]
+//    [Route("api/v1/[controller]")]
 
-    public class BudgetsController: ControllerBase
-    {
+//    public class BudgetsController: ControllerBase
+//    {
 
-        private readonly ExpenseTrackerContext _context;
-        public BudgetsController(ExpenseTrackerContext context)
-        {
+//        private readonly ExpenseTrackerContext _context;
+//        public BudgetsController(ExpenseTrackerContext context)
+//        {
 
-            _context = context;
+//            _context = context;
 
-        }
+//        }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
+//        [HttpGet]
+//        public IActionResult Get()
+//        {
 
-            return Ok(_context.Budgets);
+//            return Ok(_context.Budgets);
 
-        }
-
-
+//        }
 
 
-    }
-}
+
+
+//    }
+//}
