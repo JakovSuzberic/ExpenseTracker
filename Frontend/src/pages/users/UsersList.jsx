@@ -5,7 +5,7 @@ import { Table } from "react-bootstrap";
 
 export default function UsersList(){
 
-    const[Users, setUsers] = useState();
+    const[users, setUsers] = useState();
     
     async function fetchUsers(){
 

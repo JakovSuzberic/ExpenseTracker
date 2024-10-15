@@ -7,7 +7,7 @@ import { RouteNames } from '../constants';
 
 export default function NavBarExpenseTracker(){
 
-    const navigate = useNavigate
+    const navigate = useNavigate()
 
 return (
     <>
