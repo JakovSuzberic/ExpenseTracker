@@ -1,7 +1,18 @@
 .pointer{
-
   cursor: pointer;
   font-weight: bold;
   color: #ff7b2f;
-
 } 
+
+.desno{
+text-align: right;
+}
+
+.lijevo{
+text-align: left;
+}
+
+.centar{
+text-align: center;
+}
+
