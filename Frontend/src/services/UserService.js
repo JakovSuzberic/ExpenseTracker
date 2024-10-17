@@ -39,11 +39,41 @@ async function deleteU(user_Id){
 
 }
 
+async function post(Users){
+
+    return await HttpService.post('/Users', Users)
+    .then((response)=>{
+
+        return{error: false, message: response.data}
+
+    })
+    .catch((e)=>{
+
+        switch(e.response.status){
+
+            case 400:
+                let message = '';
+                for(const key in e.response.data.errors){
+
+                    message += key + ': ' + e.response.data.errors[key][0] + '\n';
+
+                }
+                return {error:true, message: message}
+            default:
+                return {error: true, message: 'User can not be added!'}
+
+        }
+
+    })
+
+}
+
 
 
 export default {
 
     get,
-    deleteU
+    deleteU,
+    post
 
 };
