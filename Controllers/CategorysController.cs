@@ -8,7 +8,7 @@ namespace ExpenseTracker.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class CategorysController: ControllerBase
+    public class CategorysController: ControllerBase { 
 
 
     }
