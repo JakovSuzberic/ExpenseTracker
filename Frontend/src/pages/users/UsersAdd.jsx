@@ -9,7 +9,7 @@ export default function UsersAdd(){
 
     const navigate = useNavigate();
 
-
+/*
     async function add(Users){
 
         const response = await UserService.add(Users);
@@ -26,7 +26,11 @@ export default function UsersAdd(){
     function processSubmit(e){
 
         e.preventDefault();
+
+
         let data = new FormData(e.target)
+
+
 
         add({
 
@@ -36,8 +40,10 @@ export default function UsersAdd(){
 
         })
 
-    }
 
+
+    }
+*/
 
     const styles = {
 
@@ -70,8 +76,8 @@ export default function UsersAdd(){
 
         </div>
 
-        <Form onSubmit={processSubmit}>
-
+        <Form >
+       
             <Form.Group controlId = "name">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type = "text" name = "name" required />
@@ -86,9 +92,6 @@ export default function UsersAdd(){
                 <Form.Label>Created at</Form.Label>
                 <Form.Control type = "date" name = "created_At" required />
             </Form.Group>
-
-        
-
 
 
         <Row className="d-flex justify-content-between">
