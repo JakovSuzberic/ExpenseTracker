@@ -39,7 +39,7 @@ async function deleteU(user_Id){
 
 }
 
-async function post(Users){
+async function add(Users){
 
     return await HttpService.post('/Users', Users)
     .then((response)=>{
@@ -74,6 +74,6 @@ export default {
 
     get,
     deleteU,
-    post
+    add
 
 };

@@ -35,6 +35,7 @@ export default function UsersAdd(){
         add({
             name: data.get('name'),
             email: data.get('email'),
+            password: data.get('password'),
             created_At: moment.utc(data.get('created_At'))
         })
 
@@ -72,21 +73,26 @@ export default function UsersAdd(){
 
         </div>
 
-        <Form >
+        <Form onSubmit={processSubmit}>
        
             <Form.Group controlId = "name">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type = "text" name = "name" required />
+                <Form.Control type = "text" name = "name" required placeholder="Name" />
             </Form.Group>
 
             <Form.Group controlId = "email">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type = "text" name = "email"/>
+                <Form.Control type = "text" name = "email" placeholder="Email"/>
+            </Form.Group>
+
+            <Form.Group controlId = "password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type = "password" name = "password" placeholder="Password"/>
             </Form.Group>
 
             <Form.Group controlId = "created_At">
                 <Form.Label>Created at</Form.Label>
-                <Form.Control type = "date" name = "created_At" required />
+                <Form.Control type = "date" name = "created_At" required/>
             </Form.Group>
 
 
