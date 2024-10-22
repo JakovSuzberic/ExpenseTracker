@@ -1,7 +1,7 @@
 import UserService from "../../services/UserService"
-import { Button, Col, FormLabel, Row } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 import moment from "moment";
-import { Form, Link, useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
 
 
@@ -9,7 +9,7 @@ export default function UsersAdd(){
 
     const navigate = useNavigate();
 
-/*
+
     async function add(Users){
 
         const response = await UserService.add(Users);
@@ -33,24 +33,20 @@ export default function UsersAdd(){
 
 
         add({
-
             name: data.get('name'),
             email: data.get('email'),
             created_At: moment.utc(data.get('created_At'))
-
         })
 
-
-
     }
-*/
+
 
     const styles = {
 
         buttonContainer:{
 
             width: '25%',
-            marginTop: 15
+            marginTop: 15,
 
         },
 
