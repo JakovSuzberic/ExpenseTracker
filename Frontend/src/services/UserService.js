@@ -23,7 +23,7 @@ async function get(){
 
 async function getByUserId(user_Id){
 
-    return await HttpService.get('/Users' + user_id)
+    return await HttpService.get('/Users/' + user_Id)
     .then((response)=>{
 
         return {error: false, message: response.data}
@@ -87,7 +87,7 @@ async function add(Users){
 
 async function change(user_Id, Users){
 
-    return await HttpService.put('/Users',+ user_id, Users)
+    return await HttpService.put('/Users/'+ user_Id, Users)
     .then((response)=>{
 
         return{error: false, message: response.data}

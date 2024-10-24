@@ -57,8 +57,7 @@ namespace ExpenseTracker.Controllers
         {
 
             var UserDataBase = _context.Users.Find(User_id);
-
-            UserDataBase.User_Id = User.User_Id;
+            // UserDataBase.User_Id = User.User_Id;
             UserDataBase.Name = User.Name;
             UserDataBase.Password = User.Password;
             UserDataBase.Email = User.Email;
