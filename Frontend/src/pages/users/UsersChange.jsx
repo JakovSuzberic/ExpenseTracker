@@ -1,18 +1,41 @@
 import UserService from "../../services/UserService"
 import { Button, Col, Form, Row } from "react-bootstrap";
 import moment from "moment";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { RouteNames } from "../../constants";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
-export default function UsersAdd(){
+export default function UsersChange(){
 
+    const [user, setUser] = useState({});
     const navigate = useNavigate();
+    const routeParams = useParams();
 
+    async function fetchUser(){
 
-    async function add(Users){
+        const response = await UserService.getByUserId(routeParams.user_id);
+       if(response.error){
+           alert(response.message)
+           return
+       }
 
-        const response = await UserService.add(Users);
+       let s = response.message
+        s. created_At=moment.utc(s.created_At).format('yyyy-MM-dd')
+       setUser(s)
+
+   }
+
+    useEffect   (()=>{
+
+        fetchUser();
+
+    },[])
+
+    async function change(Users){
+
+        const response = await UserService.change(routeParams.user_id, Users);
         if(response.error){
 
             alert(response.error)
@@ -30,9 +53,7 @@ export default function UsersAdd(){
 
         let data = new FormData(e.target)
 
-
-
-        add({
+        change({
             name: data.get('name'),
             email: data.get('email'),
             password: data.get('password'),
@@ -48,16 +69,17 @@ export default function UsersAdd(){
 
             width: '25%',
             marginTop: 15,
+            
 
         },
 
-        newUserText:{
+        changeUserText:{
 
             marginTop: 15,
             textAlign: 'center',
             fontSize:'24px',
             fontWeight: 'bold',
-            color: '#198754'
+            color: '#0d6efd'
 
         }
 
@@ -68,9 +90,9 @@ export default function UsersAdd(){
     
         <>
 
-        <div style={styles.newUserText}>
+        <div style={styles.changeUserText}>
 
-        New user
+        Change user
 
         </div>
 
@@ -78,30 +100,30 @@ export default function UsersAdd(){
        
             <Form.Group controlId = "name">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type = "text" name = "name" required placeholder="Name" />
+                <Form.Control type = "text" name = "name" required defaultValue={UsersChange.name} />
             </Form.Group>
 
             <Form.Group controlId = "email">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type = "text" name = "email" placeholder="Email"/>
+                <Form.Control type = "text" name = "email" defaultValue={UsersChange.email} />
             </Form.Group>
 
             <Form.Group controlId = "password">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type = "password" name = "password" placeholder="Password"/>
+                <Form.Control type = "password" name = "password" required defaultValue={UsersChange.password}/>
             </Form.Group>
 
             <Form.Group controlId = "created_At">
                 <Form.Label>Created at</Form.Label>
-                <Form.Control type = "date" name = "created_At" required/>
+                <Form.Control type = "date" name = "created_At" required defaultValue={UsersChange.created_At}/>
             </Form.Group>
 
 
         <Row className="d-flex justify-content-between">
 
             <Col style={styles.buttonContainer}>
-            <Button variant="success" className="w-100" type="submit">
-                Add user
+            <Button className="w-100" type="submit">
+                Change user
             </Button>
             </Col>
       

@@ -20,6 +20,23 @@ async function get(){
 
 }
 
+
+async function getByUserId(user_Id){
+
+    return await HttpService.get('/Users' + user_id)
+    .then((response)=>{
+
+        return {error: false, message: response.data}
+
+    })
+    .catch((e)=>{
+        
+        return {error: true, message: 'Problem kod dohvacanja usera s sifrom '+ user_Id}
+
+    })
+
+}
+
 async function deleteU(user_Id){
 
     return await HttpService.delete('/Users/' + user_Id)
@@ -68,12 +85,45 @@ async function add(Users){
 
 }
 
+async function change(user_Id, Users){
+
+    return await HttpService.put('/Users',+ user_id, Users)
+    .then((response)=>{
+
+        return{error: false, message: response.data}
+
+    })
+    .catch((e)=>{
+
+        switch(e.response.status){
+
+            case 400:
+                let message = '';
+                for(const key in e.response.data.errors){
+
+                    message += key + ': ' + e.response.data.errors[key][0] + '\n';
+
+                }
+                return {error:true, message: message}
+            default:
+                return {error: true, message: 'User can not be added!'}
+
+        }
+
+    })
+
+}
+
+
+
 
 
 export default {
 
     get,
     deleteU,
-    add
+    add,
+    getByUserId,
+    change
 
 };

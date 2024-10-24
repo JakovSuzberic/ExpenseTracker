@@ -5,7 +5,8 @@ export const RouteNames = {
     HOME: '/',
 
     USER_LIST: '/users',
-    USER_ADD: '/users/add'
+    USER_ADD: '/users/add',
+    USER_CHANGE: '/users/:user_id'
 
 }
 
