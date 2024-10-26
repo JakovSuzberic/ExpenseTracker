@@ -57,7 +57,7 @@ export default function UsersChange(){
         change({
             name: data.get('name'),
             email: data.get('email'),
-            password: data.get('password'),
+            password: "",
             created_At: moment.utc(data.get('created_At'))
         })
 
@@ -109,10 +109,6 @@ export default function UsersChange(){
                 <Form.Control type = "text" name = "email" defaultValue={userObj.email} />
             </Form.Group>
 
-            <Form.Group controlId = "password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type = "password" name = "password" required defaultValue={userObj.password}/>
-            </Form.Group>
 
             <Form.Group controlId = "created_At">
                 <Form.Label>Created at</Form.Label>

@@ -1,7 +1,7 @@
 import UserService from "../../services/UserService"
-import { Button, Col, FormLabel, Row } from "react-bootstrap";
+import { Button, Col, FormLabel, Row,Form } from "react-bootstrap";
 import moment from "moment";
-import { Form, Link, useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
 
 
@@ -32,6 +32,7 @@ export default function UsersAdd(){
 
             name: data.get('name'),
             email: data.get('email'),
+            password: "",
             created_At: moment.utc(data.get('created_At'))
 
         })
