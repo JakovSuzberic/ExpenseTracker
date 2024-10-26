@@ -10,6 +10,7 @@ import { RouteNames } from './constants';
 import Home from './pages/home';
 import UsersList from './pages/users/UsersList';
 import UsersAdd from './pages/users/UsersAdd';
+import UsersChange from './pages/users/UsersChange';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         
         <Route path={RouteNames.USER_LIST} element={<UsersList/>} />
         <Route path={RouteNames.USER_ADD} element={<UsersAdd/>} />
+        <Route path={RouteNames.USER_CHANGE} element={<UsersChange/>} />
 
         </Routes>
 

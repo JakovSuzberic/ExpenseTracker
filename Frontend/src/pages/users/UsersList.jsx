@@ -2,13 +2,14 @@ import { useEffect, useState } from "react"
 import UserService from "../../services/UserService"
 import { Button, Table } from "react-bootstrap";
 import moment from "moment";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
 
 
 export default function UsersList(){
 
     const[users, setUsers] = useState();
+    const navigate = useNavigate();
     
     async function fetchUsers(){
 
@@ -99,6 +100,7 @@ export default function UsersList(){
                     <th>Name</th>
                     <th>Email</th>
                     <th>Created at</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
 
@@ -120,6 +122,12 @@ export default function UsersList(){
                             onClick={()=>deleteU(users.user_Id)}
                             >
                                 Delete
+                            </Button>
+                            &nbsp;&nbsp;
+                            <Button
+                            onClick={()=>navigate(`/users/${users.user_Id}`)}
+                            >
+                                Change
                             </Button>
                         </td>
                     </tr>
