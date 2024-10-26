@@ -20,5 +20,6 @@ namespace ExpenseTracker.Data
         //public DbSet<PaymentMethods> PaymentMethods { get; set; }
 
 
+
     }
 }

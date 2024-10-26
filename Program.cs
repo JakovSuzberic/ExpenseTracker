@@ -1,4 +1,5 @@
 using ExpenseTracker.Data;
+using ExpenseTracker.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,9 @@ builder.Services.AddCors(options =>
             builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
     );
 });
+
+//AutoMapper
+builder.Services.AddAutoMapper(typeof(ExpenseTrackerMappingProfile));
 
 var app = builder.Build();
 
