@@ -1,4 +1,18 @@
 ﻿
+CREATE TABLE operateri(
+
+sifra int not null primary key identity(1,1),
+email varchar(50) not null,
+lozinka varchar(200) not null
+
+);
+
+INSERT INTO operateri VALUES('jakov.suzberic@gmail.com',
+'$2a$10$bsCG0kmSEg/wCStnPM9F4.GU1A7JZl5qa6N7YQwA1zrX5Bz0rtujq');
+
+INSERT INTO operateri VALUES('edunova@edunova.hr',
+'$2a$13$JpDMSmBb5sbGnwDOnsacceDwXBBDDJTZ4bsXlO7DA9sHbIXziu76G');
+
 CREATE TABLE "Users" (
 
   user_id int not null primary key identity(1,1),
