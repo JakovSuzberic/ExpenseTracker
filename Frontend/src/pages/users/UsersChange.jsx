@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { RouteNames } from "../../constants";
 import { useEffect } from "react";
 import { useState } from "react";
+import useLoading from "../../hooks/useLoading";
 
 
 export default function UsersChange(){
@@ -12,21 +13,24 @@ export default function UsersChange(){
     const [userObj, setUserObj] = useState({});
     const navigate = useNavigate();
     const routeParams = useParams();
+    const { showLoading, hideLoading } = useLoading();
 
     async function fetchUser(){
 
+        showLoading();
         const response = await UserService.getByUserId(routeParams.user_id);
-       if(response.error){
+        hideLoading();
+
+        if(response.error){
            alert(response.message)
            return
-       }
+        }
 
-       let s = response.message
+        let s = response.message
         s.created_At=moment.utc(s.created_At).format('yyyy-MM-DD')
         setUserObj(s)
-       console.log(s)
-
-   }
+        console.log(s)
+    }
 
     useEffect(()=>{
 
@@ -36,7 +40,10 @@ export default function UsersChange(){
 
     async function change(Users){
 
+        showLoading();
         const response = await UserService.change(routeParams.user_id, Users);
+        hideLoading();
+
         if(response.error){
 
             alert(response.error)

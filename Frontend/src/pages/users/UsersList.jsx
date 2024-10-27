@@ -4,16 +4,21 @@ import { Button, Table } from "react-bootstrap";
 import moment from "moment";
 import { Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
+import useLoading from "../../hooks/useLoading";
 
 
 export default function UsersList(){
 
     const[users, setUsers] = useState();
     const navigate = useNavigate();
+    const { showLoading, hideLoading } = useLoading();
     
     async function fetchUsers(){
 
-         const response = await UserService.get();
+        showLoading();
+        const response = await UserService.get();
+        hideLoading();
+
         if(response.error){
             alert(response.message)
             return
@@ -57,7 +62,10 @@ export default function UsersList(){
 
     async function deleteUser(user_Id){
 
+        showLoading();
         const response = await UserService.deleteU(user_Id);
+        hideLoading();
+
         if(response.error){
             alert(response.message)
             return;

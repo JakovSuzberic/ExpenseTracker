@@ -3,16 +3,21 @@ import { Button, Col, FormLabel, Row,Form } from "react-bootstrap";
 import moment from "moment";
 import {  Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
+import useLoading from "../../hooks/useLoading";
 
 
 export default function UsersAdd(){
 
     const navigate = useNavigate();
+    const { showLoading, hideLoading } = useLoading();
 
 
     async function add(Users){
 
+        showLoading();
         const response = await UserService.add(Users);
+        hideLoading();
+
         if(response.error){
 
             alert(response.error)

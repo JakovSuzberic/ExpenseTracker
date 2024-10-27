@@ -11,6 +11,7 @@ import Home from './pages/home';
 import UsersList from './pages/users/UsersList';
 import UsersAdd from './pages/users/UsersAdd';
 import UsersChange from './pages/users/UsersChange';
+import LoadingSpinner from './components/LoadingSpinner';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
        
+    <LoadingSpinner />
     <Container>
 
         <NavBarExpenseTracker />
