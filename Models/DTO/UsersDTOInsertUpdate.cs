@@ -8,7 +8,7 @@ namespace ExpenseTracker.Models.DTO
         [Required(ErrorMessage = "Name is required")]
         string Name,
 
-        [Required(ErrorMessage = "Password i required")]
+        [Required(ErrorMessage = "Password is required")]
         string Password,
 
         string Email,
