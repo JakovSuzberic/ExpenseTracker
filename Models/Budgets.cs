@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ExpenseTracker.Models
 {
     
-    public class Budgets: Users
+    public class Budgets: Entity
     {
         
         public int? Budget_Id { get; set; }
