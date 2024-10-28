@@ -13,6 +13,9 @@ namespace ExpenseTracker.Mapping
             CreateMap<Users, UsersDTORead>();
             CreateMap<UsersDTOInsertUpdate, Users>();
 
+            CreateMap<Budgets, BudgetsDTORead>();
+            CreateMap<BudgetsDTOInsertUpdate, Budgets>();
+
         }       
 
     }
