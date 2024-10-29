@@ -40,7 +40,7 @@ namespace ExpenseTracker.Controllers
             }
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes("MojKljucKojijeJakoTajan i dovoljno dugačak da se može koristiti");
+            var key = Encoding.UTF8.GetBytes("MojKljucKojijeJakoTajan i dovoljno dugacak da se moze koristiti");
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

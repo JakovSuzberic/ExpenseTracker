@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
 {
+
     [ApiController]
     [Route("api/v1/[controller]")]
-
     public class UsersController(ExpenseTrackerContext context, IMapper mapper): ExpenseTrackerController(context, mapper)
     {
 

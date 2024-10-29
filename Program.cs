@@ -89,7 +89,7 @@ builder.Services.AddAuthentication(x =>
 {
     x.TokenValidationParameters = new TokenValidationParameters
     {
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MojKljucKojijeJakoTajan i dovoljno duga?ak da se može koristiti")),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MojKljucKojijeJakoTajan i dovoljno dugacak da se moze koristiti")),
         ValidateIssuer = false,
         ValidateAudience = false,
         ValidateLifetime = true,

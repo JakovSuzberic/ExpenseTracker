@@ -1,9 +1,9 @@
 ﻿
 CREATE TABLE operateri(
 
-sifra int not null primary key identity(1,1),
-email varchar(50) not null,
-lozinka varchar(200) not null
+Entity_id int not null primary key identity(1,1),
+Email varchar(50) not null,
+Passwordd varchar(200) not null
 
 );
 
