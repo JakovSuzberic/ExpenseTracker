@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExpenseTracker.Data
 {
+
     public class ExpenseTrackerContext : DbContext
     {
 
