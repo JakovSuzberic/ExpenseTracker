@@ -4,13 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
 {
+
+    /// <summary>
+    /// Controller for managing courses in the application.
+    /// </summary>
     [ApiController]
     [Route("api/v1/[controller]")]
-
     public class UsersController: ControllerBase
     {
 
         private readonly ExpenseTrackerContext _context;
+
+        /// <summary>Initializes a new instance of the <see cref="UsersController" /> class.</summary>
+        /// <param name="context">The context.</param>
         public UsersController(ExpenseTrackerContext context)
         {
 
@@ -20,6 +26,7 @@ namespace ExpenseTracker.Controllers
 
 
 
+        /// <summary>Retrieves all users</summary>
         [HttpGet]
         public IActionResult Get()
         {
@@ -28,6 +35,11 @@ namespace ExpenseTracker.Controllers
 
         }
 
+        /// <summary>Retrievers user by id</summary>
+        /// <param name="User_id">The user identifier.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpGet]
         [Route("{User_id:int}")]
         public IActionResult GetByUserId(int User_id)
@@ -38,6 +50,11 @@ namespace ExpenseTracker.Controllers
         }
 
 
+        /// <summary>Adds new user</summary>
+        /// <param name="User">The user.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpPost]
         public IActionResult Post(Users User) 
         {
@@ -50,6 +67,12 @@ namespace ExpenseTracker.Controllers
 
 
 
+        /// <summary>Updates new user</summary>
+        /// <param name="User_id">The user identifier.</param>
+        /// <param name="User">The user.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpPut]
         [Route("{User_id:int}")]
         [Produces("application/json")]
@@ -71,6 +94,11 @@ namespace ExpenseTracker.Controllers
         }
 
 
+        /// <summary>Deletes user by id</summary>
+        /// <param name="User_id">The user identifier.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpDelete]
         [Route("{User_id:int}")]
         [Produces("application/json")]
